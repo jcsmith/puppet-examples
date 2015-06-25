@@ -16,7 +16,7 @@ class exampleswebapp{
   }
 
   cron{ 'fortune':
-    command => '/usr/games/fortune' > /var/www/fortune.txt'
+    command => '/usr/games/fortune' > /var/www/fortune.txt',
     user    => root,
   }
 
