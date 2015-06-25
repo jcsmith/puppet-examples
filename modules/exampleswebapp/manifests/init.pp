@@ -4,11 +4,22 @@ class exampleswebapp{
     ensure => present,
   }
 
+  package{ 'fortune' :
+    ensure => present,
+  }
+
+
   service { 'apache2':
     ensure  => running,
-    enabled => true,
+    enable => true,
     require => Package['apache2'],
   }
+
+  cron{ 'fortune':
+    command => '/usr/games/fortune' > /var/www/fortune.txt'
+    user    => root,
+  }
+
 
 }
 
