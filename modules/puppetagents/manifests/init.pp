@@ -13,7 +13,7 @@ class puppetagents {
  service { 'puppet' :
    ensure   => running,
    enable   => true,
-   requires => Package['puppet'],
+   require  => Package['puppet'],
  }
 }
 
